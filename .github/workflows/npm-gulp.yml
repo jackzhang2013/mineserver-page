@@ -26,3 +26,11 @@ jobs:
       run: |
         npm install
         gulp
+    
+    - name: Deploy to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v4
+      with:
+        target_branch: dist
+        build_dir: dist
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
